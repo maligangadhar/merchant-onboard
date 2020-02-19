@@ -1,0 +1,44 @@
+<nav class="sidebar" [ngClass]="{sidebarPushRight: isActive, collapsed: collapsed}" style="box-shadow:4px 4px 5px #ccc;">
+    <div class="list-group" style="margin-top:15px;">
+        <a (click)="navToPage('/applicationView',confirm)" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <span [ngStyle]="{'color': (router.url.split('?')[0] == '/applicationView') || router.url.split('?')[0] =='/'  ? '#424242' : ''}">
+              <i class="fa fa-fw fa-cogs"></i>&nbsp; <b>{{ 'Merchant Application View' }} </b>
+            </span>
+        </a>
+        <a (click)="navToPage('/actionView',confirm)" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <span
+                [ngStyle]="{'color': (router.url.split('?')[0] == '/actionView') ? '#424242' : ''}">
+                <i class="fa fa-fw fa-info-circle"></i>&nbsp; <b> {{ 'Merchant Action View' }}</b>
+            </span>
+        </a>
+    <!--  <a routerLink="/detailView" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-info-circle"></i>&nbsp;
+            <span>{{ 'Merchant Details View' }}</span>
+        </a>
+        <a routerLink="/statusView" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-signal"></i>&nbsp;
+            <span>{{ 'Merchant Status View' }}</span>
+        </a>
+        <a routerLink="/documentView" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-eye"></i>&nbsp;
+            <span>{{ 'Merchant Document View' }}</span>
+        </a> -->
+    </div>
+    <div class="toggle-button" [ngClass]="{collapsed: collapsed}" (click)="toggleCollapsed()" style="box-shadow:4px 4px 5px #ccc;">
+        <i class="fa fa-fw fa-angle-double-left"></i>&nbsp;
+        <span>{{ 'Collapse Sidebar'  }}</span>
+    </div>
+</nav>
+<ng-template #confirm let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Confirmation</h4>
+    </div>
+    <div class="modal-body">
+        Are you sure you want to navigate ? 
+    </div>
+    <div class="modal-footer">
+        <button pButton type="button" style="background-color:green;margin-right:5px;" (click)="modal.close('Confirm')" icon="pi pi-times" label="Confirm"></button>
+        <button pButton type="button" style="background-color:red;margin-right:5px;" (click)="modal.close('Cancel')"
+            icon="pi pi-times" label="Cancel"></button>
+    </div>
+</ng-template>

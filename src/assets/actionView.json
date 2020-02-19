@@ -1,0 +1,32 @@
+[   
+    {
+        "type": "Transaction count limit",
+        "recommendedValue": "1250 / Day",
+        "reasons":"Typically, merchants in this location makes 1000 txns/day",
+        "confirm":1
+    },
+    {
+        "type": "Transaction value limit",
+        "recommendedValue": "1000000 / Day",
+        "reasons": "This merchant sells high value goods/services",
+        "confirm": 1
+    },
+    {
+        "type": "International card acceptance",
+        "recommendedValue": "yes",
+        "reasons": "Merchant is located near tourism spot",
+        "confirm": 1
+    },
+    {
+        "type": "MDR",
+        "recommendedValue": "Credit",
+        "reasons": "1.2 %",
+        "confirm": 1
+    },
+    {
+        "type": "",
+        "recommendedValue": "Debit",
+        "reasons": "0.5 %",
+        "confirm": 1
+    }
+  ]

@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="col col-sm-4">
+    <div class="card mb-3" style="height:95%;">
+      <div style="font-weight:lighter;padding:0.5em;font-size:14px;">Application Status</div>
+      <div class="card-body">
+        <canvas baseChart height="150px" [data]="[kycNotDone, limitSettingNotDone , processCompleted]" [labels]="pieChartLabels"
+          [options]="pieChartOptions" [colors]="pieChartColors" [chartType]="pieChartType" (chartClick)="chartClicked($event)">
+        </canvas>
+      </div>
+    </div>
+  </div>
+  <div class="col col-sm-4">
+    <div class="card mb-3" style="height:95%;padding:30px;">
+      <app-stat [bgClass]="'success'" [icon]="'fa-cog'" [count]="limitSetting" [label]="'Pending Limit Setting'"></app-stat>
+      </div>
+  </div>
+  <div class="col col-sm-4">
+    <div class="card mb-3" style="height:95%;">
+      <div style="font-weight:lighter;padding:0.5em;font-size:14px;">Application Processed</div>
+      <div class="card-body">
+        <span style="float:right;margin-top:-100px;margin-right:-20px;"><b>Filter By: </b>
+          <p-dropdown [options]="barChartFilter" (onChange)="selectChart();" [(ngModel)]="filterBy" [showTransitionOptions]="'10ms'" [hideTransitionOptions]="'10ms'"></p-dropdown>
+        </span>
+        <canvas baseChart height="150" [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
+           (chartClick)="appChartClicked(processed)" [options]="pieChartOptions" [legend]="barChartLegend" [chartType]="barChartType">
+        </canvas>
+      </div>
+    </div>
+  </div>
+  
+</div>
+<ng-template #processed let-modal >
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Application's Processed</h4>
+  </div>
+  <div class="modal-body" style="height:400px;">
+    <iframe src="https://html.com" width="400px" height="100%"></iframe>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Ok</button>
+  </div>
+</ng-template>
+

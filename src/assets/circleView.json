@@ -1,0 +1,50 @@
+  [ 
+    {
+       "label": "Bangalore",
+       "count": "20",
+       "target": "30",
+       "achievement": "66 %",
+       "lat": 17.385044,
+       "lng": 78.486671
+    },
+    {
+       "label": "Mumbai",
+       "count": "15",
+       "target": "20",
+       "achievement": "75 %",
+       "lat": 19.075983,
+       "lng": 72.877655
+    },
+    {
+        "label": "Bhopal",
+        "count": "8",
+        "target": "10",
+        "achievement": "80 %",
+        "lat": 23.259933,
+        "lng": 77.412613
+    }, 
+    {
+        "label": "Kolkatta",
+        "count": "7",
+        "target": "10",
+        "achievement": "70 %",
+        "lat": 22.572645,
+        "lng": 88.363892
+    },
+     {
+         "label": "Patna",
+         "count": "5",
+         "target": "10",
+         "achievement": "50 %",
+         "lat": 25.612677,
+         "lng": 85.158875
+     },
+      {
+          "label": "Jaipur",
+          "count": "5",
+          "target": "10",
+          "achievement": "50 %",
+          "lat": 26.922070,
+          "lng": 75.778885
+      }
+  ]

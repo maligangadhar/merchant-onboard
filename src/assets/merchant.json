@@ -1,0 +1,55 @@
+{
+  "data": [ 
+     {
+        "date": "01/02/2020",
+        "appNo": "1000001",
+        "kyc":"No",
+        "limitSetting": "No",
+        "description":"Application with documents received.KYC yet to be done"
+    },
+    {
+      "date": "02/02/2020",
+      "appNo": "1000002",
+      "kyc": "Yes",
+      "limitSetting": "No",
+      "description": "Application limits are set. Need confirmation"
+    },
+    {
+      "date": "03/02/2020",
+        "appNo": "1000003",
+        "kyc": "Yes",
+        "limitSetting": "No",
+        "description": "Application with documents received.KYC yet to be done"
+    }, {
+        "date": "04/02/2020",
+        "appNo": "1000004",
+        "kyc": "Yes",
+        "limitSetting": "No",
+        "description": "Application limits are set. Need confirmation"
+    },
+    {
+        "date": "05/02/2020",
+        "appNo": "1000005",
+        "kyc": "Yes",
+        "limitSetting": "No",
+        "description": "Application limits are set. Need confirmation"
+    },
+    {
+      "date": "06/02/2020",
+      "appNo": "1000006",
+      "kyc": "Yes",
+      "limitSetting": "Yes",
+      "description": "Application limits are set. Need confirmation"
+    },
+    {
+      "date": "07/02/2020",
+      "appNo": "1000007",
+      "kyc": "Yes",
+      "limitSetting": "Yes",
+      "description": "Application limits are set. Need confirmation"
+    }
+
+  ],
+  "limitSetting": 60,
+  "processCompleted":5
+}

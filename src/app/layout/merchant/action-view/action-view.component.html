@@ -1,0 +1,84 @@
+<div>
+  <div style="margin:20px 0px 20px 0px;">
+    <span style="font-weight: bold;padding:5px;margin-bottom:10px;">Merchant Onboarding Action View - Limit Setting</span>
+    <div style="margin-bottom:10px; float:right">
+      <button pButton type="button" style="background-color:red;margin-right:5px;" icon="pi pi-times" label="Cancel" (click)="handleConfirm($event)"></button>
+      <button pButton type="button" icon="pi pi-check" label="Confirm" (click)="handleConfirm($event)"></button>
+    </div>
+  </div>
+  <div>
+  <p-panel header="Limit recommendation based on data analysis" [toggleable]="true">
+      <p-table [columns]="cols" [value]="merchantActionDetailsList">
+        <ng-template pTemplate="header" let-columns>
+          <tr>
+            <th *ngFor="let col of columns">
+              {{col.header}} <span *ngIf="col.header === 'Value'"><i class="fa fa-fw fa-lg fa-pencil-square"></i></span>
+            </th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-rowData let-columns="columns">
+          <tr>
+            <td *ngFor="let col of columns">
+              <span *ngIf="col.field === 'value';else allCell">
+            <td pEditableColumn>
+              <p-cellEditor>
+                <ng-template pTemplate="input">
+                  <input pInputText type="text" [(ngModel)]="rowData.value" (change)="recoChange($event);" >
+                </ng-template>
+                <ng-template pTemplate="output">
+                  {{rowData[col.field]}}
+                </ng-template>
+              </p-cellEditor>
+            </td>
+            </span>
+            <ng-template #allCell>
+              <span *ngIf="col.field === 'confirm';else cellData ">
+                <i class="fa fa-fw fa-lg fa-check"></i>
+              </span>
+              <ng-template #cellData>
+                <span *ngIf="col.field === 'reasons';else cData">
+                  <span id="reasons"> {{rowData[col.field]}} </span>
+                </span>
+                <ng-template #cData>
+                  {{rowData[col.field]}}
+                </ng-template>
+              </ng-template>
+            </ng-template>
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+  </p-panel>
+  </div>
+  <br>
+  <p-panel header="Exploring Reasons" [toggleable]="true">
+    <div class="row">
+        <div class="col col-sm-6">
+          <div class="card mb-3">
+            <div class="card-header">
+               Avg.txns/day of merchants in this location
+            </div>
+            <div class="card-body">
+              <canvas baseChart height="150"[datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
+                [legend]="barChartLegend" [chartType]="barChartType" (chartHover)="chartHovered($event)"
+                (chartClick)="chartClicked($event)">
+              </canvas>
+            </div>
+          </div>
+        </div>
+        <div class="col col-sm-6">
+          <div class="card mb-3">
+            <div class="card-header">
+              Similar Merchant Transactions
+            </div>
+            <div class="card-body">
+              <canvas baseChart height="150" [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions"
+                [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType"
+                (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)">
+              </canvas>
+            </div>
+          </div>
+        </div>
+  </div>
+  </p-panel>
+</div> 
